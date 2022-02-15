@@ -39,9 +39,10 @@ def read():
     all_tasks = Task.query.all()
     return render_template('read.html', tasks=all_tasks)
 
+
 @app.route('/update/<content>')
 def update(content):
-    first_task = Task.query.get(5)
+    first_task = Task.query.get(6)
     first_task.name_task = content
     db.session.commit()
     return first_task.name_task
@@ -57,7 +58,7 @@ def deletetask():
 
 @app.route('/status/<situation>')
 def status(situation):
-    a_task = Task.query.get(5)
+    a_task = Task.query.get(7)
     a_task.status_task = situation
     db.session.commit()
     return a_task.status_task

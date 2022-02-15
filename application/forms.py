@@ -4,4 +4,5 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 
 class TaskForm(FlaskForm):
-    new_task = StringField("")
+    new_task = StringField("Write your task:")
+    submit = SubmitField("Submit task")

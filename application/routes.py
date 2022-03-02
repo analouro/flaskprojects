@@ -1,6 +1,6 @@
 from application import app, db
 from application.models import Task
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 from flask_wtf import FlaskForm
 from application.forms import TaskForm
 
@@ -14,7 +14,7 @@ def add_todo():
     form = TaskForm()
 
     if request.method == "POST":
-        new_task = form.new_task
+        # new_task = form.new_task.data
 
         if form.validate_on_submit():
             task = Task(new_task = form.name_task.data)
